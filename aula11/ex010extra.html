@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            border: 1px solid black;
+            padding: 10px 0px;
+            border-radius: 10px 2px 10px 2px;
+            background-image: linear-gradient(to right, goldenrod, yellow, darkgreen);
+        }
+
+        main {
+            padding: 0px 5px;
+            width: 95vw;
+            display: grid;
+            justify-content: center;
+        }
+
+        label, input {
+            font-size: 1em;
+        }
+
+
+        div {
+            max-width: 500px;
+            border: 2px solid black;
+            border-radius: 5px;
+            padding: 10px;
+            background-image: linear-gradient(to right, lightgray, white);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Brasileiro ou Estrangeiro?</h1>
+    
+        <p>
+            <label for="country">Em qual país você nasceu?</label>
+            <input type="text" name="pais" id="country">
+            <input type="button" value="Verificar" onclick="verificar()">
+        </p>
+        
+        <div>
+            <p>
+                NASCIDO EM: <strong id="birth"></strong>
+            </p>
+            <p id="result">
+                RESULTADO: <strong id='answer'></strong>
+            </p>
+        </div>
+    </main>
+    <script>
+        function verificar() {
+            var txtp = document.getElementById('country')
+            var local = String(txtp.value).toUpperCase()
+            
+            var birth = document.querySelector('strong#birth')
+            birth.innerHTML = local
+            
+            var result = document.querySelector('strong#answer')
+            
+            if (local == 'BRASIL') {
+                result.innerHTML = 'BRASILEIRO'
+            } else {
+                result.innerHTML = 'ESTRANGEIRO'
+            }
+        }
+    </script>
+</body>
+</html>
