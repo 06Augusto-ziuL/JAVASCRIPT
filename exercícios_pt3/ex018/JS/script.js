@@ -31,7 +31,7 @@ function adicionarValor() {
   }
   valorDoInput.value = "";
   valorDoInput.focus();
-  informacoes.innerHTML = ''
+  informacoes.innerHTML = "";
 }
 
 function finalizar() {
@@ -53,21 +53,17 @@ function finalizar() {
       listaDeNumeros
     )}</p> <p>Somando todos os valores, temos ${somaDosValores}</p> <p>A média dos valores digitados é ${(
       somaDosValores / listaDeNumeros.length
-    ).toFixed(1).replace('.' , ',')}</p>`;
+    )
+      .toFixed(1)
+      .replace(".", ",")}</p>`;
   }
 }
 
 function limpar() {
-  let confirm = window.prompt("Tem certeza que deseja reiniciar? [S/N]");
-  while (true)
-    if (confirm[0] == "s" || confirm[0] == "S") {
-      listaDeNumeros = [];
-      mensagens.innerHTML = "";
-      informacoes.innerHTML = "";
-      break;
-    } else if (confirm[0] == "n" || confirm[0] == "S") {
-      break;
-    } else {
-      confirm = window.prompt("Tem certeza que deseja reiniciar? [S/N]");
-    }
+  let confirm = window.confirm("Tem certeza que deseja reiniciar?");
+  if (confirm == true) {
+    listaDeNumeros = [];
+    mensagens.innerHTML = "";
+    informacoes.innerHTML = "";
+  }
 }

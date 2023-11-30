@@ -6,6 +6,15 @@
     <title>Analisador de Números</title>
     <link rel="stylesheet" href="estilo/style.css">
     <style>
+        input#nums {
+            height: 18px;
+            
+        }
+        input#nums, button#send {
+            position: relative;
+            top: -2px;
+            left: 15px;
+        }
         select {
             width: 200px;
             padding: 10px;
@@ -34,7 +43,7 @@
 
             <p>
                 <select name="info" id="info" size="6">
-                </select>
+                </select> 
                 <br>
                 <button id="finalizar" onclick="finalizar()">Finalizar</button>
                 <input type="button" value="Limpar" id="limpar" onclick="limpar()"> 
